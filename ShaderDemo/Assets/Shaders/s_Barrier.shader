@@ -1,6 +1,4 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-Shader "Unlit/s_Barrier"
+﻿Shader "Unlit/s_Barrier"
 {
 	Properties
 	{
@@ -20,7 +18,6 @@ Shader "Unlit/s_Barrier"
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
-			// make fog work
 			#pragma multi_compile_fog
 			
 			#include "UnityCG.cginc"
@@ -76,7 +73,7 @@ Shader "Unlit/s_Barrier"
 				fixed4 mainTex = tex2D(_MainTex, i.uv);
 				mainTex.r *= triWave(_Time.x * 5, abs(i.objectPos.y) * 2, -0.7) * 6;
 				mainTex.g *= saturate(rim) * (sin(_Time.z + mainTex.b * 5) + 1);
-				return mainTex.r * _Color + mainTex.g * _Color;
+				return mainTex.r * _Color +mainTex.g * _Color;
 			}
 			
 			fixed4 frag (v2f i) : SV_Target

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: C:/Users/dwood32/AppData/Local/Temp/Temp1_NoMansScanner-master.zip/NoMansScanner-master/Assets/demoscene.unity
+- path: Assets/Scenes/WinstonField.unity
   isLoaded: 1
   isActive: 1
